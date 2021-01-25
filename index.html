@@ -411,7 +411,7 @@
   <!-- footer -->
   <footer class="footer center">
     <div class="container">
-      <p class="text">Copyright &copy; ProgrammChest | Alle Rechte vorbehalten</p>
+      <p class="text">Copyright &copy; ProgrammChest | Alle Rechte vorbehalten <p>Wurde</p><h1 id="count">0</h1><p>mal besucht</p></p>
       <div class="footer-links">
         <a href="https://invite.programm-chest.dev" class="center">
           <i class="fab fa-discord"></i>
@@ -419,6 +419,26 @@
         <a href="impressum.html" class="center">
           <i class="fas fa-info-circle"></i>
         </a>
+
+        <script>
+          const countEl = document.getElementById('count');
+
+updateVisitCount();
+
+function updateVisitCount() {
+	fetch('https://api.countapi.xyz/update/programmchest/development/?amount=1')
+	.then(res => res.json())
+	.then(res => {
+		countEl.innerHTML = res.value;
+	})
+}
+
+        </script>
+        
+
+        
+
+
 
       </div>
     </div>
